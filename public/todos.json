@@ -1,0 +1,64 @@
+{
+    "todos": [
+      {
+        "id": "1",
+        "name": "Default Todo List",
+        "description": "This is a default todo list",
+        "cards": [
+          {
+            "id": "1",
+            "name": "To Do",
+            "todos": [
+              {
+                "id": "1",
+                "name": "Create a new todo",
+                "description": "Create a new todo in the todo list",
+                "creator": {
+                  "name": "John Doe"
+                }
+              },
+              {
+                "id": "2",
+                "name": "Edit a todo",
+                "description": "Edit a todo in the todo list",
+                "creator": {
+                  "name": "John Doe"
+                }
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Doing",
+            "todos": [
+              {
+                "id": "1",
+                "name": "Delete a todo",
+                "description": "Delete a todo in the todo list",
+                "creator": {
+                  "name": "John Doe"
+                }
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Done",
+            "todos": [
+              {
+                "id": "1",
+                "name": "Create a new list",
+                "description": "Create a new list in the todo list",
+                "creator": {
+                  "name": "John Doe"
+                }
+              }
+            ]
+          }
+        ],
+        "creator": {
+          "name": "John Doe"
+        }
+      }
+    ]
+  }
