@@ -31,9 +31,9 @@ const CreatePage = ({ addTodoList }) => {
     };
 
   return (
-    <div className="mx-auto first-line:grid cols-1">
-      <section className='bg-gray-700 py-5 mb-8 w-full min-w-full'>
-          <h1 className='text-3xl font-bold text-white sm:text-2xl md:text-4xl text-center p-5'>
+    <div className="bg-gray-100 min-h-screen">
+      <section className='bg-gray-800 py-16 mb-8 w-full'>
+          <h1 className='text-3xl font-bold text-white sm:text-2xl md:text-4xl text-center'>
           Create New Todo List
           </h1>
         </section>
@@ -41,7 +41,7 @@ const CreatePage = ({ addTodoList }) => {
       
       <form 
         onSubmit={handleFormSubmit} 
-        className="flex flex-col items-center gap-6">
+        className="max-w-lg mx-auto bg-white shadow-lg rounded-md p-8 flex flex-col gap-6">
         <div>
 
           {/* Name */}
@@ -91,7 +91,7 @@ const CreatePage = ({ addTodoList }) => {
         {/* Add Todo List */}
         <button
           type="submit"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          className="bg-blue-600 text-white font-semibold rounded-lg px-6 py-3 transition duration-300 ease-in-out transform hover:bg-blue-700 hover:scale-105"
         >
           Add Todo List
         </button>

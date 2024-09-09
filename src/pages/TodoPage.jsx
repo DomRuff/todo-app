@@ -52,32 +52,31 @@ const TodoPage = ({ addTodoCard, addTodoCardEntry, deleteTodoList, deleteTodoCar
   
 
   return (
-    <div className='bg-white'>
+    <div className='bg-gray-100 min-h-screen'>
 
       {/* Back to Todo-List Overview */}
-      <section>
-        <div>
+      <section className='bg-gray-800 py-16 mb-8 w-full'>
+        <div className='container mx-auto px-4'>
           <Link
             to="/todo-list"
-            className='text-blue-500 hover:text-gray-600 inline-flex items-center text-2xl sm:text-1xl md:text-2xl mt-9 ml-8'>
+            className='text-white hover:text-gray-300 inline-flex items-center text-2xl sm:text-xl md:text-2xl'>
           <FaArrowLeft className='mr-2'/> Back to Todo List Overview
           </Link>
         </div>
       </section>
 
       {/* Display the todo list */}
-      <section className='bg-white'>
-        <div className='container m-auto py-10'>
-          <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
+      <div className='container mx-auto px-4'>
+          <div className='bg-white shadow-lg rounded-lg grid grid-cols-1 md:grid-cols-70/30 w-full gap-6 p-6'>
             <main>
 
-              <div className='bg-gray-100 p-6 rounded-lg shadow-md text-center md:text-left'>
+              <div className='bg-white p-6 rounded-md shadow-md text-center md:text-lef'>
 
                 {/* Display the todo list name */}
-                <h1 className='text-3xl font-bold mb-4'>{todoList.name}</h1>
+                <h1 className='text-gray-800 text-3xl font-bold mb-4'>{todoList.name}</h1>
 
                 {/* Display all the todo cards */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-lg'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4 rounded-md'>
                   {
                   todoList.cards.map((card) => (
                     <div key={card.id}>
@@ -92,7 +91,7 @@ const TodoPage = ({ addTodoCard, addTodoCardEntry, deleteTodoList, deleteTodoCar
                 </div>
 
               {/* Add a new todo card */}
-              <div className='mt-6 max-w-md'>
+              <div className='mt-6 max-w-md mx-auto'>
                   <form onSubmit={handleFormSubmit} className='flex flex-col'>
                     <input 
                       type='text' 
@@ -100,13 +99,13 @@ const TodoPage = ({ addTodoCard, addTodoCardEntry, deleteTodoList, deleteTodoCar
                       value={newCard.name}
                       onChange={handleInputChange} 
                       placeholder='New Card Name' 
-                      className='border p-2 rounded mb-2 w-full'
+                      className='border p-2 rounded mb-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500'
                       required
                     />
 
                       <button
                         type='submit'
-                        className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full'
+                        className='bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300 hover:scale-105'
                       >
                         Add Card
                       </button>
@@ -117,25 +116,24 @@ const TodoPage = ({ addTodoCard, addTodoCardEntry, deleteTodoList, deleteTodoCar
             </main>
 
             {/* Display the creator info, todo-list description and todo-list delete functionality*/}
-            <aside>
-              <div className='bg-gray-100 p-6 rounded-lg shadow-md'>
-                <h3 className='text-xl font-bold mb-6'>Creator Info</h3>
-                <h2 className='text-2xl'>{todoList.creator.name}</h2>
-                <hr className='my-4' />
+            <aside className='space-y-6'>
+              <div className='bg-white p-6 rounded-md shadow-md'>
+                <h3 className='text-xl font-bold mb-4 text-gray-800'>Creator Info</h3>
+                <h2 className='text-2xl texr-gray-700'>{todoList.creator.name}</h2>
               </div>
 
-              <div className='bg-gray-100 p-6 rounded-lg shadow-md mt-6'>
-                <h3 className='text-teal-800 text-lg font-bold mb-6'>
+              <div className='bg-white p-6 rounded-md shadow-md'>
+                <h3 className='text-gray-800 text-lg font-bold mb-4'>
                   Todo List Description
                 </h3>
-                <p className='mb-4'>{todoList.description}</p>
+                <p className='text-gray-600'>{todoList.description}</p>
               </div>
 
-              <div className='bg-gray-100 p-6 rounded-lg shadow-md mt-6'>
-                <h3 className='text-xl font-bold mb-6'>Manage Todo List</h3>
+              <div className='bg-white p-6 rounded-md shadow-md'>
+                <h3 className='text-xl font-bold mb-6 text-gray-800'>Manage Todo List</h3>
                 <button
                   onClick={() => onDeleteClick(todoList.id)}
-                  className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'
+                  className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 transition duration-300'
                 >
                   Delete Todo List
                 </button>
@@ -143,7 +141,6 @@ const TodoPage = ({ addTodoCard, addTodoCardEntry, deleteTodoList, deleteTodoCar
             </aside>
           </div>
         </div>
-      </section>
     </div>
   );
 }
